@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://blnqwjpxonit4"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_bri2l"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bri2l"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_dvup1"]
+sky_material = SubResource("ProceduralSkyMaterial_bri2l")
+
+[sub_resource type="Environment" id="Environment_3imfn"]
+background_mode = 2
+sky = SubResource("Sky_dvup1")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[node name="Level 01" type="Node3D" unique_id=101571361]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1624807023]
+environment = SubResource("Environment_3imfn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2113860565]
+transform = Transform3D(-0.6586895, 0.7501973, -0.057724517, 0, 0.076719, 0.9970527, 0.7524149, 0.6567482, -0.050534, 0, 0, 0)
+light_color = Color(1, 0.81960785, 0.654902, 1)
+shadow_enabled = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1784000701]
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1017785776]
+size = Vector3(50, 1, 50)
+
+[node name="Wall" type="CSGBox3D" parent="CSGCombiner3D" unique_id=579140549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1712599, 21.005499)
+size = Vector3(40, 4, 1)
+
+[node name="Wall4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2133256041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1712599, -18.013283)
+size = Vector3(40, 4, 1)
+
+[node name="Wall5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1792529306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1712599, 0.73658705)
+size = Vector3(40, 4, 1)
+
+[node name="DoorwayBottom" type="CSGBox3D" parent="CSGCombiner3D/Wall5" unique_id=772426990]
+transform = Transform3D(1.0000018, 0, 6.9849193e-10, 0, 1, 0, -6.9849193e-10, 0, 1.0000018, -13.229493, -0.378479, -0.026272774)
+operation = 2
+size = Vector3(1.8775864, 2.874878, 1.4)
+
+[node name="DoorwayArch" type="CSGCylinder3D" parent="CSGCombiner3D/Wall5" unique_id=1986466368]
+transform = Transform3D(0.9999987, -0.0018498956, -0.0018745248, 0.0018498902, -0.013229165, 0.99991095, -0.0018745281, -0.99991274, -0.013225718, -13.216038, 0.8702817, 0.00032615662)
+operation = 2
+radius = 0.9404297
+sides = 24
+
+[node name="Wall2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=974458794]
+transform = Transform3D(-0.0018500516, 0, -0.9999983, 0, 1, 0, 0.9999983, 0, -0.0018500516, 19.935825, 2.2391253, 1.4855595)
+size = Vector3(40, 4, 1)
+
+[node name="Wall6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=653992978]
+transform = Transform3D(-0.0018500516, 0, -0.9999983, 0, 1, 0, 0.9999983, 0, -0.0018500516, -5.6069055, 2.256153, -8.583648)
+size = Vector3(19.134521, 4, 1)
+
+[node name="DoorwayBottom" type="CSGBox3D" parent="CSGCombiner3D/Wall6" unique_id=302037844]
+transform = Transform3D(1.0000018, 0, 6.9849193e-10, 0, 1, 0, -6.9849193e-10, 0, 1.0000018, -0.18909645, -0.378479, -0.026272774)
+operation = 2
+size = Vector3(1.8775864, 2.874878, 1.4)
+
+[node name="DoorwayArch" type="CSGCylinder3D" parent="CSGCombiner3D/Wall6" unique_id=1656398836]
+transform = Transform3D(0.9999987, -0.0018498956, -0.0018745248, 0.0018498902, -0.013229165, 0.99991095, -0.0018745281, -0.99991274, -0.013225718, -0.17564106, 0.8702817, 0.00032615662)
+operation = 2
+radius = 0.9404297
+sides = 24
+
+[node name="Wall3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1943975389]
+transform = Transform3D(-0.0018500516, 0, -0.9999983, 0, 1, 0, 0.9999983, 0, -0.0018500516, -19.576565, 2.2391253, 1.4855595)
+size = Vector3(40, 4, 1)
+
+[node name="ProtoController" parent="." unique_id=327058575 instance=ExtResource("1_bri2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71012115, -8.642891)

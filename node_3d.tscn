@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://dc3l41reiho1f"]
 
-[node name="Node3D" type="Node3D" unique_id=101571361]
+[node name="Level 01" type="Node3D" unique_id=101571361]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1784000701]
+
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1017785776]
+size = Vector3(50, 1, 50)
