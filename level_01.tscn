@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://blnqwjpxonit4"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_bri2l"]
+[ext_resource type="PackedScene" uid="uid://d0k222bu3vuj5" path="res://assets/meshes/healthpack.glb" id="2_dvup1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bri2l"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -39,6 +40,10 @@ size = Vector3(40, 4, 1)
 [node name="Wall4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2133256041]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1712599, -18.013283)
 size = Vector3(40, 4, 1)
+
+[node name="Wall7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=3316527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 5.24252, 1.5609989)
+size = Vector3(40, 2.2, 39.9)
 
 [node name="Wall5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1792529306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1712599, 0.73658705)
@@ -79,4 +84,13 @@ transform = Transform3D(-0.0018500516, 0, -0.9999983, 0, 1, 0, 0.9999983, 0, -0.
 size = Vector3(40, 4, 1)
 
 [node name="ProtoController" parent="." unique_id=327058575 instance=ExtResource("1_bri2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71012115, -8.642891)
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 0, 0.71012115, -8.642891)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=845229037]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.7000003, 3.3000002, -7.8)
+light_specular = 3.035
+spot_range = 11.618
+spot_angle = 150.0
+
+[node name="healthpack2" parent="." unique_id=1492117966 instance=ExtResource("2_dvup1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.2, -10.1)
